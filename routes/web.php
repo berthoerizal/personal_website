@@ -11,7 +11,7 @@ use App\Http\Controllers\ConfigwebController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ProfileController;
-
+use App\Http\Controllers\NurrahmaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,6 +42,13 @@ Route::get('/login', [LoginController::class, 'index'])->name('login')->middlewa
 // Route::post('/register', [RegisterController::class, 'store'])->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate'])->middleware('guest');
 Route::post('/logout', [LoginController::class, 'logout']);
+
+Route::get('/nurrahma', [NurrahmaController::class, 'index'])->name('nurrahma');
+Route::get('/nurrahma/page2', [NurrahmaController::class, 'index2'])->name('nurrahma-page2');
+Route::get('/nurrahma/page3', [NurrahmaController::class, 'index3'])->name('nurrahma-page3');
+Route::get('/nurrahma/page4', [NurrahmaController::class, 'index4'])->name('nurrahma-page4');
+Route::post('/nurrahma/savealamat', [NurrahmaController::class, 'savealamat'])->name('save-alamat');
+Route::get('/nurrahma/page5', [NurrahmaController::class, 'index5'])->name('nurrahma-page5');
 
 // Route::get('/dashboard', [DashboardController::class, 'index']);
 // Route::get('/skill', [SkillController::class, 'index']);
